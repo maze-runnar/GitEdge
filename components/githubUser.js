@@ -17,7 +17,7 @@ import { Icon } from 'react-native-elements';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 //import { Button } from 'react-native-elements';
-import { TextInput, Button , Image} from 'react-native';
+import { TextInput, Button , Image, Linking} from 'react-native';
 
 const styles = StyleSheet.create({ bgContainer: { flex:1, width: null, height: null },
   
@@ -115,22 +115,42 @@ handleSubmit(){
 				<Button onPress={this.handleSubmit} title="Search User" color="red" />
 			</View>
 			
-			<Text>{this.state.login}</Text>
-			<Text>{this.state.html_url}</Text>
-			<Text>{this.state.url}</Text>
-			<Text>{this.state.following}</Text>
-			<Text>{this.state.followers}</Text>
-			<Text>{this.state.blog}</Text>
-			<Text>{this.state.company}</Text>
-			<Text>{this.state.email}</Text>
-			<Text>{this.state.created_at}</Text>
-			<Text>{this.state.avatar_url}</Text>
+			
 			 <Image
-		        style={styles.tinyLogo}
+		        style={{borderRadius:10, width: 150, height: 150,marginLeft: 80, marginBottom: 10}}
 		        source={{
 		          uri: this.state.avatar_url,
 		        }}
 		      />
+		      <View style={{textAlign: 'center'}}>
+		      <Text style={{fontSize:20, textAlign: 'center'}}> {this.state.name} </Text>
+		      </View>
+		      <View style={{backgroundColor:'teal', elevation: 5, margin: 10}}>
+		      <Text style={{fontSize: 20}}>Go to Github: </Text>
+		    <Text style={{color: 'white', fontSize: 20}}
+      onPress={() => Linking.openURL(this.state.html_url)}>{this.state.html_url}</Text>
+      		</View>
+      		<View style={{backgroundColor:'#0037ff', elevation: 10, margin: 10}}>
+			<Text style={{fontSize:20, }}>Api : {this.state.url}</Text>
+			</View>
+			<View style={{backgroundColor:'#fc4503', elevation: 10, margin: 10}}>
+			<Text style={{fontSize:20}}>Following : {this.state.following}</Text>
+			</View>
+			<View style={{backgroundColor:'#fc6f03', elevation: 10, margin: 10}}>
+			<Text style={{fontSize:20}}>Followerss : {this.state.followers}</Text>
+			</View>
+			<View style={{backgroundColor:'#ff00d0', elevation: 10, margin: 10}}>
+			<Text style={{fontSize:20}}>Blog : {this.state.blog}</Text>
+			</View>
+			<View style={{backgroundColor:'teal', elevation: 10, margin: 10}}>
+			<Text style={{fontSize:20}}>Company : {this.state.company}</Text>
+			</View>
+			<View style={{backgroundColor:'#ff00d0', elevation: 10, margin: 10}}>
+			<Text style={{fontSize:20}}>Email : {this.state.email}</Text>
+			</View>
+			<View style={{backgroundColor:'#ff002b', elevation: 10, margin: 10}}>
+			<Text style={{fontSize:20}}>created_at : {this.state.created_at}</Text>
+			</View>
 
 			</ScrollView>
 			
