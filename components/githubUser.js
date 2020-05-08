@@ -17,7 +17,7 @@ import { Icon } from 'react-native-elements';
 //import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 //import { Button } from 'react-native-elements';
-import { TextInput, Button , Image, Linking} from 'react-native';
+import { TextInput, Button , Image, Linking, Switch} from 'react-native';
 
 const styles = StyleSheet.create({ bgContainer: { flex:1, width: null, height: null },
   
@@ -29,8 +29,47 @@ const styles = StyleSheet.create({ bgContainer: { flex:1, width: null, height: n
   container: {
         flex: 1,
         justifyContent: "center",
-        opacity:0.3
+        opacity:0.3, 
+        
     },
+
+ darkmodeback: {
+
+ 	backgroundColor: "#403d3d",
+ 	height: 500
+
+ }, 
+ lightmodeback:{
+ 	backgroundColor:"white"
+ },
+ lighttext: {
+ 	height: 40, 
+ 	margin:10,
+ 	borderColor: 'gray', 
+ 	borderWidth: 1 , 
+ 	padding: 2, 
+ 	textAlign:'center',
+ 	height: 50, 
+ 	fontSize:20
+ }, 
+
+
+ 	darkmodetext:{
+ 	height: 40, 
+ 	margin:10,
+ 	borderColor: 'white', 
+ 	borderWidth: 1 , 
+ 	padding: 2, 
+ 	textAlign:'center',
+ 	height: 50, 
+ 	fontSize:20,
+ 	color : "white"
+ 	}
+
+
+
+
+
     });
 
 
@@ -57,11 +96,14 @@ constructor(props) {
     				followers:'',
     				following:'',
     				created_at:'',
-    				updated_at:''
+    				updated_at:'', 
+    				show : false, 
+    				darkmode: true
     				};
 
     //this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleSwitch = this.toggleSwitch.bind(this);
   }
 
 handleSubmit(){
@@ -81,7 +123,8 @@ handleSubmit(){
 				      	email:res.email,
 				      	followers: res.followers,
 				      	following: res.following,
-				      	created_at: res.created_at
+				      	created_at: res.created_at, 
+				      	show : true
 				      })
 				    })
 				    .catch((error) => {
@@ -91,15 +134,24 @@ handleSubmit(){
 
 }
 
+
+toggleSwitch(){
+	return this.setState({darkmode : !this.state.darkmode});
+}
+
+
  render(){
   return (
-  		<View>
-  			<View style = { styles.container } >
-		        <Image style= { styles.backgroundImage } source={require('../assets/share.jpeg')}/>
-		      </View>
+  		<View style={this.state.darkmode? styles.darkmodeback :styles.lightmodeback}>
+  		 <Switch
+		        trackColor={{ false: "black", true: "white" }}
+		        thumbColor={this.state.darkmode ? "black" : "grey"}
+		        ios_backgroundColor="#3e3e3e"
+		       	onValueChange={this.toggleSwitch}
+		        value={this.state.darkmode}
+		      />
   			<ScrollView>
-  			<View>
-  			
+  			<View> 			
   			<Image
 		        style={styles.tinyLogo}
 		        source={require('../assets/github1.png')}
@@ -107,7 +159,7 @@ handleSubmit(){
 		     </View>
 
 	  		 <TextInput
-			      style={{ height: 40, margin:10,borderColor: 'gray', borderWidth: 1 , padding: 2, textAlign:'center', height: 50, fontSize:20}}
+			      style={this.state.darkmode? styles.darkmodetext :styles.lighttext}
 			      onChangeText={(username) => this.setState({username})}
 			      value={this.state.username}
 			    />
@@ -122,36 +174,52 @@ handleSubmit(){
 		          uri: this.state.avatar_url,
 		        }}
 		      />
+
+
+
 		      <View style={{textAlign: 'center'}}>
 		      <Text style={{fontSize:20, textAlign: 'center'}}> {this.state.name} </Text>
 		      </View>
-		      <View style={{backgroundColor:'teal', elevation: 5, margin: 10}}>
-		      <Text style={{fontSize: 20}}>Go to Github: </Text>
-		    <Text style={{color: 'white', fontSize: 20}}
-      onPress={() => Linking.openURL(this.state.html_url)}>{this.state.html_url}</Text>
-      		</View>
-      		<View style={{backgroundColor:'#0037ff', elevation: 10, margin: 10}}>
-			<Text style={{fontSize:20, }}>Api : {this.state.url}</Text>
-			</View>
-			<View style={{backgroundColor:'#fc4503', elevation: 10, margin: 10}}>
-			<Text style={{fontSize:20}}>Following : {this.state.following}</Text>
-			</View>
-			<View style={{backgroundColor:'#fc6f03', elevation: 10, margin: 10}}>
-			<Text style={{fontSize:20}}>Followerss : {this.state.followers}</Text>
-			</View>
-			<View style={{backgroundColor:'#ff00d0', elevation: 10, margin: 10}}>
-			<Text style={{fontSize:20}}>Blog : {this.state.blog}</Text>
-			</View>
-			<View style={{backgroundColor:'teal', elevation: 10, margin: 10}}>
-			<Text style={{fontSize:20}}>Company : {this.state.company}</Text>
-			</View>
-			<View style={{backgroundColor:'#ff00d0', elevation: 10, margin: 10}}>
-			<Text style={{fontSize:20}}>Email : {this.state.email}</Text>
-			</View>
-			<View style={{backgroundColor:'#ff002b', elevation: 10, margin: 10}}>
-			<Text style={{fontSize:20}}>created_at : {this.state.created_at}</Text>
-			</View>
 
+
+		      {this.state.show ? 
+
+
+		      	<ScrollView horizontal = {true}>
+		      <View style={{backgroundColor:'purple', elevation: 5, margin: 10, borderRadius:5, width:200, height: 200, textAlign: 'center', justifyContent: 'center'}}>
+		      <Text style={{fontSize: 20}}>Go to Github: </Text>
+			    <Text style={{color: 'white', fontSize: 20}}
+	      			onPress={() => Linking.openURL(this.state.html_url)}>{this.state.html_url}</Text>
+	      		</View>
+      		<View style={{backgroundColor:'purple', elevation: 5, margin: 10, borderRadius:5, width:200, height: 200, textAlign: 'center', justifyContent: 'center'}}>
+		      <Text style={{fontSize:20, color: 'white'}}> Api : {this.state.url}</Text>
+			</View>
+			<View style={{backgroundColor:'purple', elevation: 5, margin: 10, borderRadius:5, width:200, height: 200, textAlign: 'center', justifyContent: 'center'}}>
+		      <Text style={{fontSize:20, color: 'white'}}> Following : {this.state.following}</Text>
+			</View>
+			<View style={{backgroundColor:'purple', elevation: 5, margin: 10, borderRadius:5, width:200, height: 200, textAlign: 'center', justifyContent: 'center'}}>
+		      <Text style={{fontSize:20, color: 'white'}}> Followerss : {this.state.followers}</Text>
+			</View>
+			<View style={{backgroundColor:'purple', elevation: 5, margin: 10, borderRadius:5, width:200, height: 200, textAlign: 'center', justifyContent: 'center'}}>
+		      <Text style={{fontSize:20, color: 'white'}}> Blog : {this.state.blog}</Text>
+			</View>
+			<View style={{backgroundColor:'purple', elevation: 5, margin: 10, borderRadius:5, width:200, height: 200, textAlign: 'center', justifyContent: 'center'}}>
+		      <Text style={{fontSize:20, color: 'white'}}> Company : {this.state.company}</Text>
+			</View>
+			<View style={{backgroundColor:'purple', elevation: 5, margin: 10, borderRadius:5, width:200, height: 200, textAlign: 'center', justifyContent: 'center'}}>
+		      <Text style={{fontSize:20, color: 'white'}}> Email : {this.state.email}</Text>
+			</View>
+			<View style={{backgroundColor:'purple', elevation: 5, margin: 10, borderRadius:5, width:200, height: 200, textAlign: 'center', justifyContent: 'center'}}>
+		      <Text style={{fontSize:20, color: 'white'}}> created_at : {this.state.created_at}</Text>
+			</View>
+			</ScrollView>
+
+
+
+		       :<Text style ={{marginLeft:100}}> nothing to show</Text>}
+
+
+		      
 			</ScrollView>
 			
   		</View>
