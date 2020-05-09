@@ -1,7 +1,7 @@
 ## edge runner  
 A native mobile App.      
-Using github api V3. 
-
+Using github api V3.    
+Download APK file from https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40mazerunner/redemption-165b85577e1d4221ab5ca1d22ca5fd10-signed.apk
 <details>
   <summary>Click to See app's Images</summary>
   
