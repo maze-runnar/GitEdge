@@ -1,7 +1,6 @@
 ## edge runner  
-A native mobile App.  
-share movies, songs and save them, make favourites.    
-And also using github api V3. 
+A native mobile App.      
+Using github api V3. 
 
 <details>
   <summary>Click to See app's Images</summary>
