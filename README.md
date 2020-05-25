@@ -1,6 +1,6 @@
 ## edge runner  
-A native mobile App.      
-Using github api V3.    
+A Reactive native mobile application.       
+Using github api V3. Currently the app is fetching User persional information as name , profile picture, email, following , followers , repositories and contribution details. In future version I am planning to use a github calender contribution chart.  The app also have the  ```dark``` and ```light``` mode feature. 
 Download APK file from https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40mazerunner/redemption-165b85577e1d4221ab5ca1d22ca5fd10-signed.apk
 
 
