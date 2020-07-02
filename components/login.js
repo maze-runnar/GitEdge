@@ -2,15 +2,13 @@ import React from 'react';
 import { Image, Text, View, StyleSheet ,ScrollView, TouchableOpacity, Alert} from 'react-native';
 import { SplashScreen } from 'expo';
 import { Asset } from 'expo-asset';
-import { 
-  FacebookSocialButton,
-  TwitterSocialButton,
-  InstagramSocialButton,
-  GoogleSocialButton,
-  GitHubSocialButton, LinkedInSocialButton, MicrosoftSocialButton } from "react-native-social-buttons";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Card, WhiteSpace, WingBlank, Button } from '@ant-design/react-native';
+import AwesomeButton from "react-native-really-awesome-button";
+import AwesomeButtonRick from 'react-native-really-awesome-button/src/themes/rick';
+
+import LinearGradient from "react-native-linear-gradient";
 //import Share from 'react-native-share';
 export default class Login extends React.Component {
 
@@ -21,6 +19,7 @@ export default class Login extends React.Component {
         justifyContent: "center",
         alignItems: "center",
     },
+      
      backgroundImage:{
         position: 'relative',
         top: 0,
@@ -54,33 +53,24 @@ export default class Login extends React.Component {
     });
 		return(
 			<View>
-      <View style = { styles.container } >
-        <Image style= { styles.backgroundImage } source={require('../assets/share.jpeg')}/>
-      </View>
-        <View style={{ marginTop: 30, marginLeft:50}}>
-          <FacebookSocialButton buttonViewStyle={{borderRadius:0, borderWidth:0}} onPress={() => this.props.navigation.navigate('movielist')}/>
-        </View>
-        <View style={{ marginTop: 10, marginLeft:50}}>
-          <TwitterSocialButton buttonViewStyle={{borderRadius:0, borderWidth:0}} onPress={() => this.props.navigation.navigate('movielist')}/>
-        </View>
-        <View style={{ marginTop: 10, marginLeft:50}}>
-          <InstagramSocialButton buttonViewStyle={{borderRadius:0, borderWidth:0}} onPress={() => this.props.navigation.navigate('movielist')}/>
-        </View>
-        <View style={{ marginTop: 10, marginLeft:50}}>
-          <GoogleSocialButton buttonViewStyle={{borderRadius:0, borderWidth:0}} onPress={() => this.props.navigation.navigate('movielist')}/>
-        </View>
-        <View style={{ marginTop: 10, marginLeft:50}}>
-          <GitHubSocialButton buttonViewStyle={{borderRadius:0, borderWidth:0}} onPress={() => this.props.navigation.navigate('movielist')}/>
-        </View>
-        <View style={{ marginTop: 10, marginLeft:50}}>
-          <MicrosoftSocialButton buttonViewStyle={{borderRadius:0, borderWidth:0}} onPress={() => this.props.navigation.navigate('movielist')}/>
-        </View>
-        <View style={{ marginTop: 10, marginLeft:50}}>
-          <LinkedInSocialButton buttonViewStyle={{borderRadius:0, borderWidth:0}} onPress={() => this.props.navigation.navigate('movielist')}/>
-        </View>
+
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('Detail')}>
+        <Image style= {{  left: 60,  marginTop: 30, marginLeft:50, width: 100, height: 100}} source={require('../assets/learngit.png')}/>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('github')}>
+        <Image style= {{  left: 60,  marginTop: 30, marginLeft:50, width: 100, height: 100}} source={require('../assets/github.jpg')}/>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('github')}>
+        <Image style= {{  left: 60,  marginTop: 30, marginLeft:50, width: 100, height: 100}} source={require('../assets/gitlab.webp')}/>
+      </TouchableOpacity>
+      <View style ={{top: 30 , left: 40}}>
+      <AwesomeButton   backgroundColor="white">
+      <Text style ={{fontSize: 30,color: "#f25b29", padding: 50}}>SUBSCRIBE</Text>
+    </AwesomeButton>
+    </View>
     </View>
 		);
 	}
 
 
-} 
+}

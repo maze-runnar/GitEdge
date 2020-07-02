@@ -189,7 +189,7 @@ toggleSwitch(){
   			<View> 			
   			<Image
 		        style={styles.tinyLogo}
-		        source={require('../assets/github1.png')}
+		        source={require('../assets/github.jpg')}
 		      />
 		     </View>
 
@@ -201,9 +201,9 @@ toggleSwitch(){
 
 			    {this.state.username?
 
-			   <View style ={{padding: 10, width:150, marginLeft:80}}>
-				<Button onPress={this.handleSubmit} title="Search User" color="green" />
-			</View>
+			   	<View style ={{padding: 10, width:150, marginLeft:80}}>
+					<Button onPress={this.handleSubmit} title="Search User" color="black" />
+				</View>
 					:
 					<Text></Text>
 			    }
