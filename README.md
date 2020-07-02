@@ -12,3 +12,5 @@ V2:
 <img src="https://i.ibb.co/sR3QTjn/Screenshot-20200702-124006.png" alt="Screenshot-20200702-124006" border="0" width = "200px">
 <img src="https://i.ibb.co/xzN0Ncx/Screenshot-20200702-124021.png" alt="Screenshot-20200702-124021" border="0" width ="200px">  
 
+https://i.ibb.co/sR3QTjn/Screenshot-20200702-124006.png  
+https://i.ibb.co/xzN0Ncx/Screenshot-20200702-124021.png  
