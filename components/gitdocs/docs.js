@@ -1,42 +1,70 @@
 import React, { Component } from 'react';
 import { View, Text,TouchableOpacity, Button, Linking, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Container, Header, Content, Accordion } from "native-base";
 
-const data = [   // data for git command
-          {
-            "command":"git-add",
-            "content":"Add file contents to the index" 
-          },
-          {
 
-          }
+const data1 = [
+  { title: "git init", content: "Initialize a local Git repository" },
+  { title: "git clone ssh url", content: "Create a local copy of a remote repository" },
+  { title: "git status", content: "Check status of the current files either they are staged or unstages or commited." },
+  { title: "git add [file-name.txt]", content: "Add a file to the staging area" },
+  { title: "git add -A", content: "Add all new and changed files to the staging area" },
+  { title: "git commit -m '[commit message]'", content: "Commit changes after staging them" },
+  { title: "git rm -r [file-name.txt]", content: "Remove a file or folder" },
+  { title: "git branch", content: "List branches (the asterisk denotes the current branch)" },
+  { title: "git branch -a", content: "List all branches (local and remote)" },
+  { title: "git branch [branch name]", content: "Create a new branch" },
+  { title: "git branch -d [branch name]", content: "Delete a branch" },
+  { title: "git push origin --delete [branch name]", content: "Delete a remote branch" },
+];
+
+const data2 = [
+  { title: "git push origin [branch name]", content: "Push a branch to your remote repository" },
+  { title: "git push -u origin [branch name]", content: "Push changes to remote repository (and remember the branch)" },
+  { title: "git push", content: "Push changes to remote repository (remembered branch)" },
+  { title: "git push origin --delete [branch name]", content: "Delete a remote branch" },
+  { title: "git pull", content: "Update local repository to the newest commit" },
+  { title: "git pull origin [branch name]", content: "Pull changes from remote repository" },
+  { title: "git remote add origin ssh url", content: "Add a remote repository" },
 ]
+
+const data3 = [
+  { title: "git log", content: "View changes" },
+  { title: "git log --summary", content: "View changes (detailed)" },
+  { title: "git log --oneline", content: "View changes (briefly)" },
+  { title: "git diff [source branch] [target branch]", content: "Preview changes before merging" },
+]
+
 export default class Detail extends Component {
 
   render() {
+
     return (
       <ScrollView >
-      <View style = {{justifyContent:"center", alignItems: "center"}}>
-        <Text style ={{color:"red", fontSize: 30, fontWeight: "bold"}}> DESCRIPTION </Text>
-        <Text style={{padding : 5}}>
-          Git is a fast, scalable, distributed revision control system with an unusually rich command set that provides both high-level operations and full access to internals.
-          See gittutorial to get started, then see giteveryday for a useful minimum set of commands. The Git User’s Manual has a more in-depth introduction.
-          After you mastered the basic concepts, you can come back to this page to learn what commands Git offers. You can learn more about individual Git commands with "git help command". gitcli[7] manual page gives you an overview of the command-line command syntax.
-          A formatted and hyperlinked copy of the latest Git documentation can be viewed at https://git.github.io/htmldocs/git.html or https://git-scm.com/docs.
-        </Text>
-        <Text style ={{color:"red", fontSize: 30, fontWeight: "bold"}}> GIT COMMANDS </Text>
-        <Text style={{padding : 5, fontSize: 15}}>
-          git-add : Add file contents to the index
-         </Text>
-         <Text style={{padding : 5, fontSize: 15}}>
-          git-am : Apply a series of patches from a mailbox
-         </Text>
-         <Text style={{padding : 5, fontSize: 15}}>
-          git-archive : Create an archive of files from a named tree
-         </Text>
-         <Text style={{padding : 5, fontSize: 15}}>
-          git-bisect : Use binary search to find the commit that introduced a bug
-         </Text>
+      <View style = {{justifyContent:"center", alignItems: "center", backgroundColor:'white'}}>
+        <Icon name="terminal" size={55} color="#f24e29" />
+        <Container style = {{width : "100%"}}>
+        <Content padder style={{ backgroundColor: "white" }}>
+          <Accordion dataArray={data1} expanded={false} animation={true}/>
+        </Content>
+        </Container>
+
+      </View>
+      <View style = {{justifyContent:"center", alignItems: "center", backgroundColor:'white'}}>
+        <Container style = {{width : "100%"}}>
+        <Content padder style={{ backgroundColor: "white" }}>
+          <Accordion dataArray={data2} expanded={false} animation={true}/>
+        </Content>
+        </Container>
+
+      </View>
+      <View style = {{justifyContent:"center", alignItems: "center", backgroundColor:'white', marginTop : -200, marginBottom: -300}}>
+        <Container style = {{width : "100%"}}>
+        <Content padder style={{ backgroundColor: "white" }}>
+          <Accordion dataArray={data3} expanded={false} animation={true}/>
+        </Content>
+        </Container>
 
       </View>
 

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Image, Text, View, StyleSheet ,ScrollView, TouchableOpacity, Alert} from 'react-native';
+import { Image, Text, View, StyleSheet ,ScrollView, TouchableOpacity, Alert, Linking} from 'react-native';
 import { SplashScreen } from 'expo';
 import { Asset } from 'expo-asset';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Card, WhiteSpace, WingBlank, Button } from '@ant-design/react-native';
@@ -63,12 +64,17 @@ export default class Login extends React.Component {
       <TouchableOpacity onPress={() => this.props.navigation.navigate('github')}>
         <Image style= {{  left: 60,  marginTop: 30, marginLeft:50, width: 100, height: 100}} source={require('../assets/gitlab.webp')}/>
       </TouchableOpacity>
-      <View style ={{top: 30 , left: 40}}>
-      <AwesomeButton   backgroundColor="white">
-      <Text style ={{fontSize: 30,color: "#f25b29", padding: 50}}>SUBSCRIBE</Text>
-    </AwesomeButton>
+      <View style ={{top: 40 }}>
+      <View style ={{alignItems : "center", backgroundColor : "white"}}>
+        <AwesomeButton   backgroundColor="white"  backgroundDarker="white"
+        onPress={() => Linking.openURL("https://github.com/maze-runnar/GitEdge/fork")}
+        >
+        <Icon name="github" size={25} color="black" />
+        <Text style ={{fontSize: 20,color: "black", padding:5}}>Fork</Text>
+      </AwesomeButton>
+      </View>
     </View>
-    </View>
+    </View> 
 		);
 	}
 

@@ -1,96 +1,78 @@
 import React from 'react';
-import {  Text, View, StyleSheet ,ScrollView, TouchableOpacity, Alert } from 'react-native';
-import { SplashScreen } from 'expo';
+import {  Text, View, StyleSheet ,ScrollView, TouchableOpacity } from 'react-native';
 import { Asset } from 'expo-asset';
-import { 
-  FacebookSocialButton,
-  TwitterSocialButton,
-  InstagramSocialButton,
-  GoogleSocialButton,
-  GitHubSocialButton, LinkedInSocialButton, MicrosoftSocialButton } from "react-native-social-buttons";
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import {  WhiteSpace, WingBlank ,Card} from '@ant-design/react-native';
-//import Share from 'react-native-share';
-import { toast } from 'react-toastify';
-import { Icon } from 'react-native-elements';
-//import Icon from 'react-native-vector-icons/FontAwesome';
-import {Divider, ListItem, Input } from 'react-native-elements';
-//import { Button } from 'react-native-elements';
+import { Card} from '@ant-design/react-native';
 import { TextInput, Button , Image, Linking, Switch} from 'react-native';
 
 const styles = StyleSheet.create({ bgContainer: { flex:1, width: null, height: null },
   
- tinyLogo: {
-    width: 100,
-    height: 100,
-    marginLeft: 110,
-  },
-  container: {
-        flex: 1,
-        justifyContent: "center",
-        opacity:0.3, 
-        
-    },
+	tinyLogo: {
+		width: 60,
+		height: 60,
 
- darkmodeback: {
+	},
+	container: {
+	    flex: 1,
+	    justifyContent: "center",
+	    opacity:0.3, 
+	    
+	},
 
- 	backgroundColor: "#403d3d",
- 	height: 500
+	darkmodeback: {
 
- }, 
- lightmodeback:{
- 	backgroundColor:"white"
- },
- lighttext: {
- 	height: 40, 
- 	margin:10,
- 	borderColor: 'gray', 
- 	borderWidth: 1 , 
- 	padding: 2, 
- 	textAlign:'center',
- 	height: 50, 
- 	fontSize:20
- }, 
+		backgroundColor: "#403d3d",
+		height: 500
+
+	}, 
+	lightmodeback:{
+		backgroundColor:"white",
+		height:500
+	},
+	lighttext: {
+		height: 40, 
+		margin:10,
+		borderColor: 'gray', 
+		borderWidth: 1 ,
+		borderRadius:50, 
+		padding: 10, 
+		height: 50, 
+		fontSize:20,
+		textAlignVertical: "center",
+		opacity : 0.8
+	}, 
 
 
  	darkmodetext:{
- 	height: 40, 
- 	margin:10,
- 	borderColor: 'white', 
- 	borderWidth: 1 , 
- 	padding: 2, 
- 	textAlign:'center',
- 	height: 50, 
- 	fontSize:20,
- 	color : "white"
+	 	height: 40, 
+	 	margin:10,
+	 	borderColor: 'white', 
+	 	borderWidth: 1 , 
+	 	padding: 2, 
+	 	textAlign:'center',
+	 	height: 50, 
+	 	fontSize:20,
+	 	color : "white"
  	},
 
  	maincontent:{
- 		backgroundColor:'green',
- 		 elevation: 5,
- 		 margin: 10, 
- 		borderRadius:5,
- 		 width:200,
- 		 height: 100, 
- 		textAlign: 'center',
- 		 justifyContent: 'center',
- 		 padding:5
+ 		backgroundColor:'teal',
+		elevation: 10,
+		margin: 5, 
+		borderTopStartRadius:10,
+		borderBottomEndRadius: 10,
+		borderTopEndRadius: 20,
+		borderBottomStartRadius: 20,
+		width:200,
+		height: 100, 
+		textAlign: 'center',
+		justifyContent: 'center',
+		padding:5
  	}
 
 
 
     });
-
-
-
-const users = [
- {
-    name: 'brynn',
-    avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
- },
-]
-
 
 
 
@@ -180,13 +162,13 @@ toggleSwitch(){
   		<View style={this.state.darkmode? styles.darkmodeback :styles.lightmodeback}>
   		 <Switch
 		        trackColor={{ false: "black", true: "white" }}
-		        thumbColor={this.state.darkmode ? "black" : "grey"}
+		        thumbColor={this.state.darkmode ? "black" : "white"}
 		        ios_backgroundColor="#3e3e3e"
 		       	onValueChange={this.toggleSwitch}
 		        value={this.state.darkmode}
 		      />
   			<ScrollView>
-  			<View> 			
+  			<View style = {{alignItems :"center"}}> 			
   			<Image
 		        style={styles.tinyLogo}
 		        source={require('../assets/github.jpg')}
@@ -196,12 +178,12 @@ toggleSwitch(){
 	  		 <TextInput
 			      style={this.state.darkmode? styles.darkmodetext :styles.lighttext}
 			      onChangeText={(username) => this.setState({username})}
-			      value={this.state.username}
+			      value ={this.state.username}
 			    />
 
 			    {this.state.username?
 
-			   	<View style ={{padding: 10, width:150, marginLeft:80}}>
+			   	<View style ={{ alignItems : "center", textAlign :"center", marginBottom: 20}}>
 					<Button onPress={this.handleSubmit} title="Search User" color="black" />
 				</View>
 					:
@@ -209,26 +191,21 @@ toggleSwitch(){
 			    }
 			
 			
-			
+			<View style ={{alignItems :"center"}}>
 			 <Image
-		        style={{borderRadius:10, width: 150, height: 150,marginLeft: 80, marginBottom: 10}}
+		        style={{borderRadius:10, width: 150, height: 150, marginBottom: 10}}
 		        source={{
 		          uri: this.state.avatar_url,
 		        }}
 		      />
+		     </View>
 
 
-
-		      <View style={{textAlign: 'center'}}>
-		      <Text style={{fontSize:20, textAlign: 'center'}}> {this.state.name} </Text>
-		     <Text style={{fontSize:10, textAlign: 'center'}}> {this.state.bio} </Text>
-
-		      </View>
-
-
+		     <View style={{textAlign: 'center', alignItems :"center"}}>
+		      	<Text style={{fontSize:20, textAlign: 'center'}}> {this.state.name} </Text>
+		     	<Text style={{fontSize:10, textAlign: 'center'}}> {this.state.bio} </Text>
+		     </View>
 		      {this.state.show ? 
-
-
 		      	<ScrollView horizontal = {true}>
 		      <View style={styles.maincontent}>
 		     
@@ -270,7 +247,7 @@ toggleSwitch(){
 
 				      <Card.Header
 			              title={u.name}
-			              thumbStyle={{ width: 30, height: 40 }}
+			              thumbStyle={{ width: 40, height: 40, borderRadius : 40 }}
 			              thumb={u.owner["avatar_url"]}
 			        
 			            />
