@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, Text, View, StyleSheet ,ScrollView, TouchableOpacity, Alert} from 'react-native';
 import { SplashScreen } from 'expo';
 import { Asset } from 'expo-asset';
-import { 
+import {
   FacebookSocialButton,
   TwitterSocialButton,
   InstagramSocialButton,
@@ -19,8 +19,10 @@ import Setting from './components/settings';
 import movielist from './components/movielist';
 import userview from './components/userview';
 import { Icon } from 'react-native-elements';
-import login from './components/login'; 
-
+import login from './components/login';
+import github from './components/githubUser';
+import docs from './components/gitdocs/docs';
+import video from './components/gitdocs/video';
 
 
 const styles = StyleSheet.create({ bgContainer: { flex:1, width: null, height: null },
@@ -98,61 +100,89 @@ export default class App extends React.Component {
     return (
 
     <NavigationContainer>
-      
+
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="login" component={login}  options={{ 
-          title: 'Redemption login',
+        <Stack.Screen name="login" component={login}  options={{
+          title: 'GitEdge',
           headerStyle: {
-            backgroundColor: 'orange',
+            backgroundColor: 'blue',
           },
           headerTintColor: 'white',
           headerTitleStyle: {
-            
+
           }, }}/>
-        <Stack.Screen name="movielist" component={movielist} options={{ 
+        <Stack.Screen name="movielist" component={movielist} options={{
           title: 'Movies List',
           headerStyle: {
-            backgroundColor: 'orange',
-            
+            backgroundColor: 'blue',
+
           },
           headerTintColor: 'white',
           headerTitleStyle: {
-            
+
           },
            headerRight: () => (
-            
+
                 <Image
                  source={require('./assets/logo.jpg')}
                  style={styles.ImageIconStyle}
-                 
-                 />  
-           
+
+                 />
+
           ), }}/>
-        <Stack.Screen name="Detail" component={Detail}  options={{ 
-          title: 'Redemption Detail',
+        <Stack.Screen name="Detail" component={Detail}  options={{
+          title: 'Learn Git',
           headerStyle: {
-            backgroundColor: 'orange',
+            backgroundColor: 'blue',
           },
           headerTintColor: 'white',
           headerTitleStyle: {
-            
-          }, 
+
+          },
 
 
         }}/>
 
-        <Stack.Screen name="userview" component={userview}  options={{ 
+        <Stack.Screen name="userview" component={userview}  options={{
           title: 'Setting',
           headerStyle: {
-            backgroundColor: 'orange',
+            backgroundColor: 'blue',
           },
           headerTintColor: 'white',
           headerTitleStyle: {
-            
+
+          }, }}/>
+
+        <Stack.Screen name="github" component={github}  options={{
+          title: 'Search Github',
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+
+          }, }}/>
+        <Stack.Screen name="video" component={video}  options={{
+          title: 'Git Tutorial',
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+
+          }, }}/>
+        <Stack.Screen name="docs" component={docs}  options={{
+          title: 'Git help',
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+
           }, }}/>
       </Stack.Navigator>
     </NavigationContainer>
-  
+
     );
   }
 
@@ -176,5 +206,5 @@ export default class App extends React.Component {
     this.setState({ isReady: true });
   };
 
-  
+
 }
