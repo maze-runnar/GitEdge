@@ -2,21 +2,11 @@ import React from 'react';
 import { Image, Text, View, StyleSheet ,ScrollView, TouchableOpacity, Alert} from 'react-native';
 import { SplashScreen } from 'expo';
 import { Asset } from 'expo-asset';
-import {
-  FacebookSocialButton,
-  TwitterSocialButton,
-  InstagramSocialButton,
-  GoogleSocialButton,
-  GitHubSocialButton, LinkedInSocialButton, MicrosoftSocialButton } from "react-native-social-buttons";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Card, WhiteSpace, WingBlank, Button } from '@ant-design/react-native';
-//import Share from 'react-native-share';
-import { toast } from 'react-toastify';
-import Toast from 'light-toast';
 import Detail from './components/moviedetail';
 import Setting from './components/settings';
-import movielist from './components/movielist';
 import userview from './components/userview';
 import { Icon } from 'react-native-elements';
 import login from './components/login';
@@ -111,25 +101,7 @@ export default class App extends React.Component {
           headerTitleStyle: {
 
           }, }}/>
-        <Stack.Screen name="movielist" component={movielist} options={{
-          title: 'Movies List',
-          headerStyle: {
-            backgroundColor: 'blue',
-
-          },
-          headerTintColor: 'white',
-          headerTitleStyle: {
-
-          },
-           headerRight: () => (
-
-                <Image
-                 source={require('./assets/logo.jpg')}
-                 style={styles.ImageIconStyle}
-
-                 />
-
-          ), }}/>
+      
         <Stack.Screen name="Detail" component={Detail}  options={{
           title: 'Learn Git',
           headerStyle: {
