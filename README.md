@@ -25,4 +25,4 @@ V2:
 <img src="https://i.ibb.co/zGRzMf0/Screenshot-20200702-124021.png" alt="Screenshot-20200702-124021" border="0" width = "200px">
 <img src="https://i.ibb.co/t3wLbkr/Screenshot-20200703-002029.png" alt="Screenshot-20200703-002029" border="0" width = "200px">
 <img src="https://i.ibb.co/HYMw2bX/Screenshot-20200703-002117.png" alt="Screenshot-20200703-002117" border="0" width = "200px">
-<a href="https://ibb.co/hM6WLZ5"><img src="https://i.ibb.co/hM6WLZ5/Screenshot-20200713-220830.png" alt="Screenshot-20200713-220830" border="0" width = "200px"></a>
+<a href="https://ibb.co/hM6WLZ5"><img src="https://i.ibb.co/sPfwb6S/Screenshot-20200713-220830.png" alt="Screenshot-20200713-220830" border="0" width ="200px"></a><br /><a target='_blank' href='https://nonprofitlight.com/az/mesa/community-bridges-inc'>community bridges phoenix</a><br />
