@@ -19,8 +19,9 @@ Download APK file from: https://expo.io/artifacts/322016e5-8e55-4a0f-9bab-ab6da5
 Scan this QR code with your expo app.  
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/K96s7kc/Awesome-Git.png" alt="Awesome-Git" border="0"></a>
 
-V2:     
-<a href="https://ibb.co/N9z5145"><img src="https://i.ibb.co/dPyFbhF/Screenshot-20200702-123950.png" width="200px" alt="Screenshot-20200702-123950" border="0"></a>
+V2:  
+<img src="https://i.ibb.co/gyS0SDV/splash.jpg" alt="splash" border="0" width = "200px">
+<img src="https://i.ibb.co/cwcMtpw/Screenshot-20200714-074725.png" alt="Screenshot-20200714-074725" border="0" width="200px">
 <a href="https://ibb.co/TPZ88Q8"><img src="https://i.ibb.co/5sd88Q8/Screenshot-20200702-124000.png" width="200px" alt="Screenshot-20200702-124000" border="0"></a>
 <img src="https://i.ibb.co/v3J7NC5/Screenshot-20200702-124006-1.png" alt="Screenshot-20200702-124006-1" border="0" width = "200px">
 <img src="https://i.ibb.co/zGRzMf0/Screenshot-20200702-124021.png" alt="Screenshot-20200702-124021" border="0" width = "200px">
