@@ -22,12 +22,12 @@ Scan this QR code with your expo app.
 V2:  
 <img src="https://i.ibb.co/gyS0SDV/splash.jpg" alt="splash" border="0" width = "200px">
 <img src="https://i.ibb.co/cwcMtpw/Screenshot-20200714-074725.png" alt="Screenshot-20200714-074725" border="0" width="200px">
+<a href="https://ibb.co/vZdc4q6"><img src="https://i.ibb.co/5Bj1h4g/Screenshot-20200715-181929.png" alt="Screenshot-20200715-181929" border="0" width = "200px"></a>
+<a href="https://ibb.co/7ypnjKB"><img src="https://i.ibb.co/j4wybDq/Screenshot-20200715-182014.png" alt="Screenshot-20200715-182014" border="0" width = "200px"></a>
+<a href="https://ibb.co/M6MMFFx"><img src="https://i.ibb.co/dgGG88w/Screenshot-20200715-181938.png" alt="Screenshot-20200715-181938" border="0" width = "200px"></a>
+<a href="https://ibb.co/LZs0p6z"><img src="https://i.ibb.co/qr2D19M/Screenshot-20200715-181951.png" alt="Screenshot-20200715-181951" border="0" width = "200px"></a>
 <a href="https://ibb.co/TPZ88Q8"><img src="https://i.ibb.co/5sd88Q8/Screenshot-20200702-124000.png" width="200px" alt="Screenshot-20200702-124000" border="0"></a>
 <img src="https://i.ibb.co/v3J7NC5/Screenshot-20200702-124006-1.png" alt="Screenshot-20200702-124006-1" border="0" width = "200px">
 <img src="https://i.ibb.co/zGRzMf0/Screenshot-20200702-124021.png" alt="Screenshot-20200702-124021" border="0" width = "200px">
 <img src="https://i.ibb.co/t3wLbkr/Screenshot-20200703-002029.png" alt="Screenshot-20200703-002029" border="0" width = "200px">
 <img src="https://i.ibb.co/HYMw2bX/Screenshot-20200703-002117.png" alt="Screenshot-20200703-002117" border="0" width = "200px">
-<a href="https://ibb.co/vZdc4q6"><img src="https://i.ibb.co/5Bj1h4g/Screenshot-20200715-181929.png" alt="Screenshot-20200715-181929" border="0" width = "200px"></a>
-<a href="https://ibb.co/7ypnjKB"><img src="https://i.ibb.co/j4wybDq/Screenshot-20200715-182014.png" alt="Screenshot-20200715-182014" border="0" width = "200px"></a>
-<a href="https://ibb.co/M6MMFFx"><img src="https://i.ibb.co/dgGG88w/Screenshot-20200715-181938.png" alt="Screenshot-20200715-181938" border="0" width = "200px"></a>
-<a href="https://ibb.co/LZs0p6z"><img src="https://i.ibb.co/qr2D19M/Screenshot-20200715-181951.png" alt="Screenshot-20200715-181951" border="0" width = "200px"></a>
